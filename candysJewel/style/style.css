@@ -1,0 +1,1356 @@
+@import url("general.css");
+
+/* =========================================================
+   BASE GLOBALE
+   ========================================================= */
+
+body{
+    background: linear-gradient(180deg, #fff8fb 0%, #fffdfd 45%, #fff5f8 100%);
+    color: #2e2430;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+main{
+    width: 100%;
+}
+
+img{
+    max-width: 100%;
+    display: block;
+}
+
+a{
+    text-decoration: none;
+}
+
+h1, h2, h3, h4{
+    color: #4a2d3b;
+}
+
+p{
+    color: #5a4a54;
+    line-height: 1.7;
+}
+
+/* =========================================================
+   BOUTONS GLOBAUX
+   ========================================================= */
+
+.picture,
+.btn-commande,
+.btn-panier,
+.btn-detail,
+.btn-submit,
+.bouton-annuler,
+.btn-connexion,
+.btn-secondaire,
+.btn-inscription {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: auto;
+    min-width: 180px;
+    padding: 12px 20px;
+    border-radius: 999px;
+    text-decoration: none;
+    border: none;
+    cursor: pointer;
+    font-size: 0.98rem;
+    font-weight: 600;
+    transition: all 0.25s ease;
+}
+
+.picture,
+.btn-commande,
+.btn-panier,
+.btn-detail,
+.btn-submit,
+.btn-connexion,
+.btn-inscription {
+    background: linear-gradient(135deg, #d889a8, #b56487);
+    color: #ffffff;
+    box-shadow: 0 10px 20px rgba(182, 116, 145, 0.18);
+}
+
+.picture:hover,
+.btn-commande:hover,
+.btn-panier:hover,
+.btn-detail:hover,
+.btn-submit:hover,
+.btn-connexion:hover,
+.btn-inscription:hover {
+    background: linear-gradient(135deg, #b56487, #98496d);
+    color: #ffffff;
+    transform: translateY(-2px);
+}
+
+.bouton-annuler,
+.btn-secondaire {
+    background: #ffffff;
+    color: #8b4766;
+    border: 1px solid #e7c9d6;
+}
+
+.bouton-annuler:hover,
+.btn-secondaire:hover {
+    background: #fbeaf1;
+    color: #7c3f5c;
+}
+
+/* =========================================================
+   FORMULAIRES GLOBAUX
+   ========================================================= */
+
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="number"],
+select,
+textarea {
+    width: 100%;
+    min-height: 46px;
+    border: 1px solid #d9beca;
+    color: #382831;
+    background-color: #ffffff;
+    border-radius: 14px;
+    padding: 12px 16px;
+    font-size: 1rem;
+}
+
+input[type="text"]:hover,
+input[type="email"]:hover,
+input[type="password"]:hover,
+input[type="number"]:hover,
+select:hover,
+textarea:hover {
+    border-color: #c996ac;
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="password"]:focus,
+input[type="number"]:focus,
+select:focus,
+textarea:focus {
+    outline: none;
+    border-color: #b56487;
+    box-shadow: 0 0 0 4px rgba(181, 100, 135, 0.12);
+}
+
+input[type="submit"]{
+    padding: 12px 20px;
+    border-radius: 999px;
+    color: #fff;
+    background: linear-gradient(135deg, #d889a8, #b56487);
+    border: none;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+input[type="submit"]:hover{
+    background: linear-gradient(135deg, #b56487, #98496d);
+}
+
+.input-container{
+    margin-bottom: 14px;
+}
+
+.erreur,
+.message-erreur,
+.label {
+    color: #c0392b;
+}
+
+.labelOk {
+    color: #2e8b57;
+}
+
+.invalide{
+    border: 2px solid #c0392b !important;
+    background-color: #fff1f0 !important;
+}
+
+.valide{
+    border: 2px solid #2e8b57 !important;
+    background-color: #f6fffa !important;
+}
+
+/* =========================================================
+   ACCUEIL
+   ========================================================= */
+
+.page-accueil {
+    padding-bottom: 60px;
+}
+
+.hero-accueil {
+    max-width: 1250px;
+    margin: 30px auto 50px auto;
+    min-height: 430px;
+    border-radius: 30px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    padding: 60px;
+    background:
+        linear-gradient(rgba(45, 24, 34, 0.40), rgba(45, 24, 34, 0.40)),
+        url("../images/header.jpg") center/cover no-repeat;
+    box-shadow: 0 18px 40px rgba(126, 87, 118, 0.18);
+}
+
+.hero-contenu {
+    max-width: 650px;
+    background: rgba(255,255,255,0.18);
+    backdrop-filter: blur(6px);
+    padding: 35px;
+    border-radius: 24px;
+}
+
+.hero-accueil .sur-titre {
+    color: #fff0f7;
+    font-size: 0.95rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 10px;
+}
+
+.hero-accueil h2 {
+    text-align: left;
+    color: #ffffff;
+    font-size: 3rem;
+    margin-bottom: 20px;
+}
+
+.hero-accueil p {
+    color: #fff8fb;
+    font-size: 1.05rem;
+    margin-bottom: 18px;
+}
+
+.hero-boutons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 14px;
+    margin-top: 20px;
+}
+
+.bienvenue-client {
+    max-width: 1250px;
+    margin: 0 auto 30px auto;
+    background: linear-gradient(135deg, #fff1f6, #fbe6ef);
+    border: 1px solid #f0ccd9;
+    border-radius: 18px;
+    padding: 18px 24px;
+}
+
+.bienvenue-client p {
+    margin: 0;
+    text-align: center;
+    font-weight: 600;
+    color: #7b4761;
+}
+
+.section-intro,
+.categories-accueil,
+.avantages-boutique,
+.galerie-accueil {
+    max-width: 1250px;
+    margin: 0 auto 60px auto;
+    padding: 0 20px;
+}
+
+.section-intro {
+    text-align: center;
+}
+
+.section-intro h2,
+.categories-accueil h2,
+.avantages-boutique h2,
+.galerie-accueil h2 {
+    text-align: center;
+    font-size: 2.2rem;
+    margin-bottom: 18px;
+}
+
+.texte-centre {
+    text-align: center;
+    max-width: 850px;
+    margin: 0 auto;
+}
+
+.page-accueil .evenement {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 24px;
+    width: 100%;
+    align-items: stretch;
+}
+
+.page-accueil .objet {
+    background: #ffffff;
+    border: 1px solid #f1dfe7;
+    border-radius: 24px;
+    padding: 28px;
+    margin: 0;
+    height: auto;
+    box-shadow: 0 12px 28px rgba(120, 88, 103, 0.10);
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.page-accueil .objet:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 18px 34px rgba(120, 88, 103, 0.16);
+}
+
+.page-accueil .objet h3 {
+    font-size: 1.45rem;
+    text-align: left;
+    margin-bottom: 16px;
+}
+
+.page-accueil .objet p {
+    font-size: 1rem;
+    margin-bottom: 14px;
+}
+
+.page-accueil .objet section,
+.page-accueil .objet article {
+    display: block;
+    background: transparent;
+}
+
+.page-accueil #even,
+.page-accueil #even0 {
+    width: 100%;
+    height: 240px;
+    margin: 0 0 18px 0;
+    border-radius: 18px;
+    object-fit: cover;
+    display: block;
+}
+
+.page-accueil #decompte {
+    margin: 20px 0;
+    padding: 18px;
+    font-size: 2rem;
+    text-align: center;
+    width: 100%;
+    background: #32242c;
+    border-radius: 16px;
+    color: #ffdbe8;
+    box-shadow: none;
+}
+
+.form-infolettre {
+    background: #fff8fb;
+    border: 1px solid #f0dce4;
+    border-radius: 18px;
+    padding: 16px;
+    box-shadow: none;
+    margin-top: 20px;
+}
+
+.form-infolettre fieldset {
+    border: none;
+    padding: 0;
+}
+
+.form-infolettre legend {
+    font-weight: 700;
+    color: #7a4760;
+    margin-bottom: 10px;
+}
+
+/* =========================================================
+   CARROUSEL
+   ========================================================= */
+
+.conteneur-carrousel {
+    width: 100%;
+    max-width: 980px;
+    height: 560px;
+    margin: 35px auto 0;
+    position: relative;
+    border-radius: 28px;
+    overflow: hidden;
+    box-shadow: 0 16px 40px rgba(118, 80, 102, 0.16);
+    background: #fff;
+}
+
+.conteneur-images {
+    width: 100%;
+    height: 100%;
+}
+
+.conteneur-images img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    opacity: 0;
+    transition: opacity 0.35s ease-in-out;
+}
+
+.actif {
+    opacity: 1 !important;
+}
+
+.commandes {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.commandes button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 52px;
+    height: 52px;
+    border-radius: 50%;
+    border: none;
+    background: rgba(255, 255, 255, 0.86);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.12);
+}
+
+.commandes button:nth-child(1) {
+    left: 16px;
+}
+
+.commandes button:nth-child(2) {
+    right: 16px;
+}
+
+.commandes img {
+    width: 16px;
+}
+
+.cercles {
+    position: absolute;
+    bottom: 18px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: auto;
+    height: auto;
+    display: flex;
+    gap: 8px;
+    background: rgba(255,255,255,0.75);
+    padding: 8px 12px;
+    border-radius: 999px;
+}
+
+.cercle {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    border: none;
+    cursor: pointer;
+    background: #d7b2c2;
+}
+
+.actif-cercle {
+    background: #a95779;
+}
+
+/* =========================================================
+   CATEGORIES / CARTES
+   ========================================================= */
+
+.page-categories {
+    padding: 30px 20px 60px;
+}
+
+.page-categories h1,
+.page-categories h2 {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.bloc-categorie {
+    max-width: 1200px;
+    margin: 0 auto 50px auto;
+}
+
+.titre-categorie {
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 3px solid #d889a8;
+    font-size: 2rem;
+}
+
+.grille-bijoux {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 25px;
+}
+
+.carte-bijou {
+    background-color: white;
+    border-radius: 20px;
+    padding: 20px;
+    box-shadow: 0 10px 24px rgba(0,0,0,0.08);
+    text-align: center;
+    border: 1px solid #f1dfe7;
+}
+
+.image-carte-bijou {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 14px;
+    margin-bottom: 15px;
+}
+
+.image-vide {
+    width: 100%;
+    height: 250px;
+    background-color: #f3f3f3;
+    border-radius: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 15px;
+    color: #666;
+}
+
+/* =========================================================
+   DETAIL BIJOU
+   ========================================================= */
+
+.page-detail-bijou {
+    padding: 30px 20px 60px;
+}
+
+.fiche-bijou {
+    display: block;
+    width: 100%;
+    max-width: 1200px;
+    margin: 30px auto;
+    background-color: white;
+    border-radius: 20px;
+    padding: 30px;
+    box-shadow: 0 0 12px rgba(0, 0, 0, 0.12);
+}
+
+.detail-bijou-colonnes {
+    display: flex;
+    gap: 40px;
+    align-items: flex-start;
+    flex-wrap: wrap;
+}
+
+.detail-bijou-gauche,
+.detail-bijou-droite {
+    flex: 1 1 400px;
+}
+
+.detail-bijou-gauche h2 {
+    margin-bottom: 20px;
+}
+
+.galerie-bijou {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.image-detail-bijou {
+    width: 100%;
+    max-width: 450px;
+    border-radius: 12px;
+    border: 1px solid #ddd;
+    object-fit: cover;
+    background-color: #fff;
+}
+
+.infos-bijou {
+    margin-bottom: 30px;
+}
+
+.infos-bijou p,
+.variantes-bijou p,
+.variantes-bijou label,
+.fiche-bijou p,
+.fiche-bijou h2,
+.fiche-bijou h3 {
+    color: black;
+}
+
+.infos-bijou p,
+.variantes-bijou p {
+    margin-bottom: 12px;
+    font-size: 1rem;
+}
+
+.variantes-bijou h3 {
+    margin-bottom: 15px;
+}
+
+.variantes-bijou select,
+.variantes-bijou input[type="number"] {
+    max-width: 320px;
+}
+
+.retour-boutique {
+    margin-top: 20px;
+}
+
+/* =========================================================
+   PANIER
+   ========================================================= */
+
+.page-panier {
+    padding: 30px 20px 60px;
+}
+
+.conteneur-panier {
+    max-width: 1100px;
+    margin: 0 auto;
+    background-color: white;
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 0 0 12px rgba(0,0,0,0.1);
+}
+
+.conteneur-panier h1 {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.liste-panier {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.article-panier {
+    display: flex;
+    gap: 20px;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 16px;
+    align-items: flex-start;
+    flex-wrap: wrap;
+}
+
+.image-panier img,
+.image-vide-panier {
+    width: 180px;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 10px;
+    background-color: #eee;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.infos-panier {
+    flex: 1;
+}
+
+.infos-panier h2 {
+    margin-bottom: 10px;
+    color: black;
+}
+
+.infos-panier p {
+    margin-bottom: 10px;
+    color: black;
+}
+
+.form-panier {
+    margin-top: 15px;
+}
+
+.form-panier input[type="number"] {
+    width: 80px;
+    padding: 8px;
+    margin: 0 10px;
+}
+
+.resume-panier {
+    margin-top: 30px;
+    text-align: right;
+}
+
+.resume-panier h3 {
+    margin-bottom: 20px;
+    color: black;
+}
+
+.actions-panier {
+    display: flex;
+    gap: 15px;
+    justify-content: flex-end;
+    flex-wrap: wrap;
+}
+
+.btn-supprimer {
+    background-color: #444;
+    color: white;
+}
+
+.btn-supprimer:hover {
+    background-color: #222;
+}
+
+/* =========================================================
+   COMMANDE / PAIEMENT
+   ========================================================= */
+
+.page-commande,
+.page-paiement {
+    padding: 30px 20px 60px;
+}
+
+.conteneur-commande {
+    max-width: 1000px;
+    margin: 0 auto;
+    background-color: white;
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 0 0 12px rgba(0,0,0,0.1);
+}
+
+.conteneur-commande h1 {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.bloc-commande {
+    margin-top: 20px;
+}
+
+.bloc-commande h2 {
+    margin-bottom: 20px;
+}
+
+.liste-commande {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.article-commande {
+    border: 1px solid #ddd;
+    border-radius: 16px;
+    padding: 20px;
+    background-color: #fafafa;
+}
+
+.article-commande p,
+.bloc-commande p,
+.total-commande h3 {
+    color: black;
+    margin-bottom: 10px;
+}
+
+.total-commande {
+    margin-top: 25px;
+    margin-bottom: 25px;
+    text-align: right;
+}
+
+/* =========================================================
+   CONNEXION / INSCRIPTION / LIVRAISON
+   ========================================================= */
+
+.page-connexion,
+.page-livraison {
+    padding: 40px 20px 60px;
+}
+
+.conteneur-connexion,
+.conteneur-livraison {
+    max-width: 650px;
+    margin: 0 auto;
+    background-color: white;
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 0 0 12px rgba(0, 0, 0, 0.1);
+}
+
+.conteneur-connexion h1,
+.conteneur-livraison h1 {
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+.form-connexion,
+.form-livraison {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.form-connexion label,
+.form-livraison label {
+    color: black;
+    font-weight: bold;
+}
+
+.actions-connexion {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+    margin-top: 10px;
+}
+
+/* =========================================================
+   FAQ
+   ========================================================= */
+
+.accordeonConteneur {
+    padding: 30px;
+    background: #fff;
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+    margin: 30px auto;
+    max-width: 1000px;
+    border-radius: 20px;
+}
+
+.accordeonItem {
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+}
+
+.accordeonItemHeader {
+    cursor: pointer;
+    margin: 0 0 10px 0;
+    padding: 14px 16px;
+    background: #f4d5e1;
+    color: black;
+    border-radius: 10px;
+    box-sizing: border-box;
+}
+
+.fermer .accordeonItemContenu {
+    height: 0;
+    transform: scaleY(0);
+}
+
+.ouvert .accordeonItemContenu {
+    padding: 20px;
+    background: #fff;
+    border: 1px solid #ddd;
+    width: 100%;
+    margin: 0 0 10px 0;
+    transform: scaleY(1);
+    transform-origin: top;
+    box-sizing: border-box;
+    border-radius: 12px;
+}
+
+.ouvert .accordeonItemHeader {
+    background: #d889a8;
+    color: white;
+}
+
+/* =========================================================
+   GALERIE MOBILE
+   ========================================================= */
+
+.conteneur {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+
+.photos {
+    background: #fff;
+    border-radius: 12px;
+    margin: 20px;
+    padding: 10px;
+    max-width: 30%;
+    overflow: hidden;
+    box-shadow: 0 10px 24px rgba(0,0,0,0.08);
+}
+
+.photos img {
+    border: 3px solid #000;
+    width: 100%;
+    height: auto;
+    transition: all 1s ease;
+}
+
+.photos img:hover {
+    transform: scale(1.05);
+    opacity: 0.7;
+}
+
+.photos .texte {
+    font-size: 1rem;
+    width: 100%;
+    padding: 10px;
+}
+
+/* =========================================================
+   VIGNETTES
+   ========================================================= */
+
+.flex-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 14px;
+}
+
+.vignette-bijou {
+    background-color: white;
+    height: 205px;
+    width: 205px;
+    border: 1px solid #ddd;
+    border-radius: 100px;
+    cursor: pointer;
+    overflow: hidden;
+}
+
+.vignette-bijou:hover {
+    opacity: 0.85;
+}
+
+.vignette-bijou img {
+    height: 200px;
+    width: 100%;
+    object-fit: cover;
+}
+
+#zone-affichage {
+    background-color: white;
+    padding: 10px;
+    display: flex;
+    width: 700px;
+    height: 500px;
+    margin: 10px auto 5px;
+    border: solid 3px #333333;
+    border-radius: 10px;
+}
+
+/* =========================================================
+   LIGHTBOX
+   ========================================================= */
+
+body.lb-disable-scrolling {
+    overflow: hidden;
+}
+
+.lightboxOverlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 9999;
+    background-color: black;
+    opacity: 0.8;
+    display: none;
+}
+
+.lightbox {
+    position: absolute;
+    left: 0;
+    width: 100%;
+    z-index: 10000;
+    text-align: center;
+    line-height: 0;
+    font-weight: normal;
+    outline: none;
+}
+
+.lightbox .lb-image {
+    display: block;
+    height: auto;
+    max-width: inherit;
+    max-height: none;
+    border-radius: 3px;
+    border: 4px solid white;
+}
+
+.lightbox a img {
+    border: none;
+}
+
+.lb-outerContainer {
+    position: relative;
+    width: 250px;
+    height: 250px;
+    margin: 0 auto;
+    border-radius: 4px;
+    background-color: white;
+}
+
+.lb-loader {
+    position: absolute;
+    top: 43%;
+    left: 0;
+    height: 25%;
+    width: 100%;
+    text-align: center;
+    line-height: 0;
+}
+
+.lb-cancel {
+    display: block;
+    width: 32px;
+    height: 32px;
+    margin: 0 auto;
+    background: url(../images/loading.gif) no-repeat;
+}
+
+.lb-nav {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    z-index: 10;
+}
+
+.lb-nav a {
+    outline: none;
+    background-image: url('data:image/gif;base64,R0lGODlhAQABAPAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==');
+}
+
+.lb-prev, .lb-next {
+    height: 100%;
+    cursor: pointer;
+    display: block;
+}
+
+.lb-nav a.lb-prev {
+    width: 34%;
+    left: 0;
+    float: left;
+    background: url(../images/prev.png) left 48% no-repeat;
+    opacity: 0;
+    transition: opacity 0.6s;
+}
+
+.lb-nav a.lb-prev:hover {
+    opacity: 1;
+}
+
+.lb-nav a.lb-next {
+    width: 64%;
+    right: 0;
+    float: right;
+    background: url(../images/next.png) right 48% no-repeat;
+    opacity: 0;
+    transition: opacity 0.6s;
+}
+
+.lb-nav a.lb-next:hover {
+    opacity: 1;
+}
+
+.lb-dataContainer {
+    margin: 0 auto;
+    padding-top: 5px;
+    width: 100%;
+    border-bottom-left-radius: 4px;
+    border-bottom-right-radius: 4px;
+}
+
+.lb-data {
+    padding: 0 4px;
+    color: #ccc;
+}
+
+.lb-data .lb-details {
+    width: 85%;
+    float: left;
+    text-align: left;
+    line-height: 1.1em;
+}
+
+.lb-data .lb-caption {
+    font-size: 13px;
+    font-weight: bold;
+    line-height: 1em;
+}
+
+.lb-data .lb-caption a {
+    color: #4ae;
+}
+
+.lb-data .lb-number {
+    display: block;
+    clear: left;
+    padding-bottom: 1em;
+    font-size: 12px;
+    color: #999999;
+}
+
+.lb-data .lb-close {
+    display: block;
+    float: right;
+    width: 30px;
+    height: 30px;
+    background: url(../images/close.png) top right no-repeat;
+    text-align: right;
+    outline: none;
+    opacity: 0.7;
+    transition: opacity 0.2s;
+}
+
+.lb-data .lb-close:hover {
+    cursor: pointer;
+    opacity: 1;
+}
+
+/* =========================================================
+   TABLES
+   ========================================================= */
+
+table{
+    border-spacing: 0;
+    margin: 0 auto 100px auto;
+    width: 50%;
+    box-shadow: 0 0 10px 20px lightgray;
+    background: white;
+}
+
+th,
+td{
+    border: 2px solid black;
+    padding: 20px;
+    text-align: center;
+}
+
+th{
+    background-color: #f4d5e1;
+}
+
+td{
+    background-color: #fff8fb;
+}
+
+caption{
+    font-weight: bold;
+    padding: 20px;
+}
+
+/* =========================================================
+   RESPONSIVE
+   ========================================================= */
+
+@media screen and (max-width: 1024px) {
+    .conteneur-carrousel {
+        height: 420px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .hero-accueil {
+        padding: 22px;
+        margin: 20px 15px 35px 15px;
+        min-height: 340px;
+    }
+
+    .hero-contenu {
+        padding: 24px;
+    }
+
+    .hero-accueil h2 {
+        font-size: 1.9rem;
+    }
+
+    .hero-boutons,
+    .actions-panier,
+    .actions-connexion {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .picture,
+    .btn-commande,
+    .btn-panier,
+    .btn-detail,
+    .btn-submit,
+    .bouton-annuler,
+    .btn-connexion,
+    .btn-secondaire,
+    .btn-inscription {
+        width: 100%;
+    }
+
+    .conteneur-carrousel {
+        height: 320px;
+        border-radius: 20px;
+    }
+
+    .photos {
+        max-width: 100%;
+    }
+
+    .detail-bijou-colonnes,
+    .article-panier {
+        flex-direction: column;
+    }
+
+    .conteneur-connexion,
+    .conteneur-livraison,
+    .conteneur-panier,
+    .conteneur-commande,
+    .fiche-bijou {
+        padding: 20px;
+    }
+
+    table {
+        width: 95%;
+    }
+}
+
+.page-commandes-utilisateur {
+    padding: 40px 20px 60px;
+}
+
+.conteneur-commandes-utilisateur {
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.conteneur-commandes-utilisateur h1 {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.liste-commandes-utilisateur {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 24px;
+}
+
+.carte-commande-utilisateur {
+    background: #ffffff;
+    border: 1px solid #f1dfe7;
+    border-radius: 20px;
+    padding: 24px;
+    box-shadow: 0 12px 28px rgba(120, 88, 103, 0.10);
+}
+
+.ligne-commande-utilisateur {
+    display: flex;
+    justify-content: space-between;
+    gap: 12px;
+    margin-bottom: 12px;
+    color: #4f4148;
+}
+
+.label-commande {
+    color: #7d6872;
+}
+
+.badge-statut {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 6px 12px;
+    border-radius: 999px;
+    font-size: 0.9rem;
+    font-weight: 700;
+}
+
+.badge-payee {
+    background: #e7f8ee;
+    color: #2e8b57;
+}
+
+.badge-en_attente {
+    background: #fff4dd;
+    color: #b7791f;
+}
+
+.badge-failed {
+    background: #ffe7e7;
+    color: #c0392b;
+}
+
+
+/* =========================================================
+   BOUTIQUE AMÉLIORÉE
+   ========================================================= */
+
+.hero-categorie-actions {
+    margin-top: 20px;
+}
+
+.carte-bijou-simple {
+    padding: 0;
+    overflow: hidden;
+}
+
+.carte-bijou-simple .contenu-carte-bijou {
+    padding: 20px;
+    text-align: center;
+}
+
+.carte-bijou-simple .contenu-carte-bijou h2 {
+    font-size: 1.25rem;
+    line-height: 1.4;
+    margin-bottom: 10px;
+    min-height: 56px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.prix-bijou {
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: #9b4f73;
+    margin-bottom: 18px;
+}
+
+.retour-categorie-bas {
+    margin-top: 35px;
+    text-align: center;
+}
+
+.page-categorie .grille-bijoux {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 28px;
+}
+
+.page-categorie .image-carte-bijou,
+.page-categorie .image-vide {
+    height: 280px;
+    border-radius: 0;
+}
+
+@media screen and (max-width: 768px) {
+    .carte-bijou-simple .contenu-carte-bijou h2 {
+        min-height: auto;
+    }
+
+    .page-categorie .image-carte-bijou,
+    .page-categorie .image-vide {
+        height: 220px;
+    }
+}
+
+.message-stock-erreur {
+    color: red;
+    font-weight: 700;
+    margin: 10px 0;
+}
+
+.message-stock-ok {
+    color: green;
+    font-weight: 600;
+    margin: 10px 0;
+}
+
+.btn-submit:disabled,
+.btn-panier:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
