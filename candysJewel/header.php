@@ -1,6 +1,21 @@
 <?php
 if (session_status() === PHP_SESSION_NONE) {
+    $secureCookie = (!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] !== 'off');
+
+    session_set_cookie_params([
+        'lifetime' => 0,
+        'path' => '/',
+        'domain' => '',
+        'secure' => $secureCookie,
+        'httponly' => true,
+        'samesite' => 'Lax',
+    ]);
+
     session_start();
+}
+
+if (empty($_SESSION['csrf_token'])) {
+    $_SESSION['csrf_token'] = bin2hex(random_bytes(32));
 }
 ?>
 <!DOCTYPE html>
@@ -62,10 +77,10 @@ if (session_status() === PHP_SESSION_NONE) {
                     ?>
 
                     <a href="compte.php" class="avatar-utilisateur" title="Mon compte">
-                        <?= htmlspecialchars($initiale) ?>
+                        <?= htmlspecialchars($initiale, ENT_QUOTES, 'UTF-8') ?>
                     </a>
 
-                    <a href="deconnexion.php?redirect=<?= urlencode($_SERVER['REQUEST_URI']) ?>" class="action-icone" title="Déconnexion">
+                    <a href="deconnexion.php?redirect=<?= urlencode($_SERVER['REQUEST_URI'] ?? 'index.php') ?>" class="action-icone" title="Déconnexion">
                         <i class="fa-solid fa-right-from-bracket"></i>
                     </a>
                 <?php else: ?>
