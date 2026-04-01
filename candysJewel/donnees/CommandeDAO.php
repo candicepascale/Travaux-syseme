@@ -164,35 +164,35 @@ class CommandeDAO
     }
 
     public static function mettreAJourStatut(
-        int $commandeId,
-        string $statut,
-        ?string $stripeSessionId = null,
-        ?string $stripePaymentIntentId = null
-    ): bool {
-        $pdo = Connexion::getInstance();
+            int $commandeId,
+            string $statut,
+            ?string $stripeSessionId = null,
+            ?string $stripePaymentIntentId = null
+        ): bool {
+            $pdo = Connexion::getInstance();
 
-        $sql = "
-            UPDATE commande
-            SET statut = :statut,
-                stripe_session_id = :stripe_session_id,
-                stripe_payment_intent_id = :stripe_payment_intent_id,
-                date_paiement = CASE
-                    WHEN :statut = 'payee' THEN NOW()
-                    ELSE date_paiement
-                END
-            WHERE id = :id
-        ";
+            $sql = "
+                UPDATE commande
+                SET statut = :statut,
+                    stripe_session_id = :stripe_session_id,
+                    stripe_payment_intent_id = :stripe_payment_intent_id,
+                    date_paiement = CASE
+                        WHEN :statut_case = 'payee' THEN NOW()
+                        ELSE date_paiement
+                    END
+                WHERE id = :id
+            ";
 
-        $requete = $pdo->prepare($sql);
+            $requete = $pdo->prepare($sql);
 
-        return $requete->execute([
-            ':statut' => $statut,
-            ':stripe_session_id' => $stripeSessionId,
-            ':stripe_payment_intent_id' => $stripePaymentIntentId,
-            ':id' => $commandeId
-        ]);
-    }
-
+            return $requete->execute([
+                ':statut' => $statut,
+                ':statut_case' => $statut,
+                ':stripe_session_id' => $stripeSessionId,
+                ':stripe_payment_intent_id' => $stripePaymentIntentId,
+                ':id' => $commandeId
+            ]);
+        }
     public static function decrementerStockCommande(int $commandeId): bool
     {
         $pdo = Connexion::getInstance();

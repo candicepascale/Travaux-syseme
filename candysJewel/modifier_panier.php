@@ -1,5 +1,7 @@
 <?php
-session_start();
+if (session_status() === PHP_SESSION_NONE) {
+    session_start();
+}
 
 require_once __DIR__ . "/donnees/BijouDAO.php";
 
@@ -8,17 +10,39 @@ if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
     exit;
 }
 
-$index = isset($_POST['index']) ? (int)$_POST['index'] : -1;
-$quantite = isset($_POST['quantite']) ? (int)$_POST['quantite'] : 1;
+$csrfTokenFormulaire = $_POST['csrf_token'] ?? '';
+$csrfTokenSession = $_SESSION['csrf_token'] ?? '';
 
-if (!isset($_SESSION['panier']) || !isset($_SESSION['panier'][$index])) {
+if (
+    empty($csrfTokenFormulaire) ||
+    empty($csrfTokenSession) ||
+    !hash_equals($csrfTokenSession, $csrfTokenFormulaire)
+) {
+    $_SESSION['message_panier'] = "Requête invalide.";
+    header("Location: panier.php");
+    exit;
+}
+
+$index = filter_input(INPUT_POST, 'index', FILTER_VALIDATE_INT);
+$quantite = filter_input(INPUT_POST, 'quantite', FILTER_VALIDATE_INT);
+
+$index = ($index !== false && $index !== null) ? $index : -1;
+$quantite = ($quantite !== false && $quantite !== null) ? $quantite : 1;
+
+if (!isset($_SESSION['panier']) || !is_array($_SESSION['panier']) || !isset($_SESSION['panier'][$index])) {
     header("Location: panier.php");
     exit;
 }
 
 $article = $_SESSION['panier'][$index];
-$bijouId = (int)$article['bijou_id'];
-$tailleId = (int)$article['taille_id'];
+$bijouId = (int)($article['bijou_id'] ?? 0);
+$tailleId = (int)($article['taille_id'] ?? 0);
+
+if ($bijouId <= 0 || $tailleId <= 0) {
+    $_SESSION['message_panier'] = "Article invalide.";
+    header("Location: panier.php");
+    exit;
+}
 
 $bijou = BijouDAO::trouverParId($bijouId);
 
@@ -33,9 +57,9 @@ $stockDisponible = 0;
 $tailleLibelle = '';
 
 foreach ($variantes as $variante) {
-    if ((int)$variante['taille_id'] === $tailleId) {
-        $stockDisponible = (int)$variante['stock'];
-        $tailleLibelle = $variante['libelle'];
+    if ((int)($variante['taille_id'] ?? 0) === $tailleId) {
+        $stockDisponible = (int)($variante['stock'] ?? 0);
+        $tailleLibelle = (string)($variante['libelle'] ?? '');
         break;
     }
 }
